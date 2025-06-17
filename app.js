@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors());
-const port = 3000;
+const port = 3000 || process.env.PORT;
 
 async function extractFirstRegistrationDate(newPage2) {
   try {
