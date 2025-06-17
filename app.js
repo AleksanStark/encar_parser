@@ -65,10 +65,13 @@ const runEncarParse = async (
   drive,
   color
 ) => {
-  chromium.use(StealthPlugin());
-
   const browser = await chromium.launch({
-    headless: true,
+    headless: false,
+    proxy: {
+      server: "brd.superproxy.io",
+      username: "brd-customer-hl_4601e441-zone-web_unlocker3-country-kr",
+      password: "l4xu99mkaqid",
+    },
   });
 
   const context = await browser.newContext();
