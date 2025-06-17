@@ -68,7 +68,7 @@ const runEncarParse = async (
   chromium.use(StealthPlugin());
 
   const browser = await chromium.launch({
-    headless: false,
+    headless: true,
   });
 
   const context = await browser.newContext();
