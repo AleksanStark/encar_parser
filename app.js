@@ -66,7 +66,7 @@ const runEncarParse = async (
   color
 ) => {
   const browser = await chromium.launch({
-    headless: false,
+    headless: true,
     proxy: {
       server: "brd.superproxy.io",
       username: "brd-customer-hl_4601e441-zone-web_unlocker3-country-kr",
