@@ -1,6 +1,5 @@
 import express from "express";
-import StealthPlugin from "puppeteer-extra-plugin-stealth";
-import { chromium } from "playwright-extra";
+import { firefox } from "playwright";
 import cors from "cors";
 
 const app = express();
@@ -65,13 +64,8 @@ const runEncarParse = async (
   drive,
   color
 ) => {
-  const browser = await chromium.launch({
-    headless: true,
-    proxy: {
-      server: "brd.superproxy.io",
-      username: "brd-customer-hl_4601e441-zone-web_unlocker3-country-kr",
-      password: "l4xu99mkaqid",
-    },
+  const browser = await firefox.launch({
+    headless: false,
   });
 
   const context = await browser.newContext();
